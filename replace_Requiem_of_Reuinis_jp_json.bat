@@ -10,9 +10,9 @@ powershell -NoLogo -NoProfile -Command ^
   "$lines = Get-Content '%2' -Encoding UTF8;" ^
   "for ($i = 1; $i -lt $lines.Count; $i++) {" ^
   "  $parts = $lines[$i] -split \"`t\";" ^
-  "  if ($parts.Count -ge 4) {" ^
-  "    $key = $parts[2];" ^
-  "    $val = $parts[3];" ^
+  "  if ($parts.Count -ge 2) {" ^
+  "    $key = $parts[1];" ^
+  "    $val = $parts[2];" ^
   "    if (![string]::IsNullOrWhiteSpace($key)) { $map[$key] = $val }" ^
   "  }" ^
   "}" ^
